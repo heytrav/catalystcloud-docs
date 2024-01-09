@@ -15,27 +15,32 @@ Please refer `Kubernetes official document`_ for the full list of admission cont
 
 
 Catalyst Cloud Kubernetes Service does support setting admission controllers
-when create a new cluster by specifying labels. In Kubernetes v1.18.x, below
+when create a new cluster by specifying labels. The following 
 admission controllers are enabled by default:
 
-* NamespaceLifecycle
-* LimitRanger
-* ServiceAccount
-* TaintNodesByCondition
-* Priority
-* DefaultTolerationSeconds
-* DefaultStorageClass
-* StorageObjectInUseProtection
-* PersistentVolumeClaimResize
-* RuntimeClass
 * CertificateApproval
 * CertificateSigning
 * CertificateSubjectRestriction
 * DefaultIngressClass
+* DefaultStorageClass
+* DefaultTolerationSeconds
+* LimitRanger
 * MutatingAdmissionWebhook
-* ValidatingAdmissionWebhook
+* NamespaceLifecycle
+* PersistentVolumeClaimResize
+* PodSecurity
+* Priority
 * ResourceQuota
+* RuntimeClass
+* ServiceAccount
+* StorageObjectInUseProtection
+* TaintNodesByCondition
+* ValidatingAdmissionPolicy
+* ValidatingAdmissionWebhook
 
+.. Note:: 
+   The exact set of admission controllers may vary depending on which version
+   of Kubernetes you are using.
 
 How to turn on an admission controller
 ======================================

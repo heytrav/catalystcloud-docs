@@ -44,7 +44,6 @@ assigned to their account.
 |               | excluding the admin namespace.                               |
 +---------------+--------------------------------------------------------------+
 
-
 .. Warning::
 
   The privileged roles deserve special attention when deploying kubernetes

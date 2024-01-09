@@ -28,11 +28,24 @@ used to create a production ready cluster.
 Pre-requisites
 **************
 
-Ensure user has the required privileges
+Service user
+============
+
+As a first step, we recommend creating a service user in your account which you
+then use to create Kubernetes clusters. The service user can have an arbitrary name 
+such as `preprod-serviceuser@mycompany.nz`. 
+
+
+Ensure service user has the required privileges
 =======================================
 
-In order to create a Kubernetes cluster you need to ensure the user has been
-allocated the ``heat_stack_owner`` role.
+In order to create a Kubernetes cluster the service user only requires the ``_member_``
+role.
+
+.. Note::
+   The Kubernetes service user is only meant to create Kubernetes clusters and should not
+   perform any administrative functions on your account. It is important that it does
+   not have additional roles like ``project_admin``.
 
 Ensure quota is sufficient
 ==========================
@@ -52,7 +65,7 @@ By default, the development Kubernetes template allocates:
 * 3 security groups
 * 1 load balancer
 
-As a ``project admin`` you can change your quota using the `Quota Management`_
+A user with the ``project admin`` role can change your quota using the `Quota Management`_
 panel in the dashboard, under the Management section.
 
 .. _`Quota Management`: https://dashboard.catalystcloud.nz/management/quota/
@@ -140,6 +153,9 @@ dashboard, under the **Container Infra** section.
 ***********************************************
 Creating a Kubernetes cluster via the dashboard
 ***********************************************
+.. Note::
+  For the following examples you will need to login to the dashboard as 
+  your service user.
 
 The simplest way to create a kubernetes cluster is through the Catalyst Cloud
 dashboard. The dashboard allows you to create, manage and monitor the current
@@ -214,6 +230,11 @@ Creating a Kubernetes cluster via the CLI
 If you have already created the cluster using the dashboard, you can safely
 skip this step of the tutorial. In this section we illustrate how the same
 operation can be done using the more powerful (and easier to automate) CLI.
+
+.. Note::
+   As with the dashboard example, you will need to ensure you are logging in
+   as the service user. Be sure to download the openrc file for the service user
+   rather than your personal account before proceeding.
 
 Before proceeding, please ensure you have :ref:`installed the
 CLI<installing_cli_os>` and :ref:`sourced an openrc file
