@@ -32,8 +32,10 @@ Service user
 ============
 
 As a first step, we recommend creating a service user in your account which you
-then use to create Kubernetes clusters. The service user can have an arbitrary name 
-such as `preprod-serviceuser@mycompany.nz`. 
+then use to create Kubernetes clusters. The service user can have an arbitrary
+name such as `preprod-serviceuser@mycompany.nz`. Please see the
+:ref:`kubernetes-user-access` section for more discussion on why a service user
+is needed.
 
 
 Ensure service user has the required privileges
