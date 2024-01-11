@@ -410,7 +410,7 @@ To create a new **production** cluster run the following command:
 .. code-block:: bash
 
   $ openstack coe cluster create k8s-cluster \
-  --cluster-template kubernetes-v1.18.2-prod-20200630 \
+  --cluster-template kubernetes-v1.28.2-prod-20240630 \
   --node-count 3 \
   --master-count 3
 
@@ -419,7 +419,7 @@ To create a new **development** cluster run the following command:
 .. code-block:: bash
 
   $ openstack coe cluster create k8s-cluster \
-  --cluster-template kubernetes-v1.18.2-dev-20200630 \
+  --cluster-template kubernetes-v1.28.2-dev-20230630 \
   --node-count 3 \
   --master-count 1
 
@@ -450,7 +450,7 @@ use a cluster creation command like this:
 .. code-block:: bash
 
   $ openstack coe cluster create k8s-cluster \
-  --cluster-template kubernetes-v1.18.2-prod-20200630 \
+  --cluster-template kubernetes-v1.28.2-prod-20240630 \
   --labels auto_scaling_enabled=true\
   --merge-labels \
   --node-count 3 \

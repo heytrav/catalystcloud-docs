@@ -128,18 +128,18 @@ The following command will list all cluster templates available:
   +--------------------------------------+-----------------------------------+
   | uuid                                 | name                              |
   +--------------------------------------+-----------------------------------+
-  | d4715786-441d-4c59-bb0f-XXXXXXXXXXXX | kubernetes-v1.19.6-dev-20210211   |
-  | 5c999fc7-715d-4213-9b4e-XXXXXXXXXXXX | kubernetes-v1.19.6-prod-20210211  |
-  | 76f3a1ed-d970-40d1-962e-XXXXXXXXXXXX | kubernetes-v1.18.14-dev-20210211  |
-  | bef3162b-2a15-4df2-b637-XXXXXXXXXXXX | kubernetes-v1.18.14-prod-20210211 |
-  | 7946001d-222b-43fd-8ffa-XXXXXXXXXXXX | kubernetes-v1.17.16-dev-20210211  |
-  | 35ec1bbf-c2e1-4cd9-8677-XXXXXXXXXXXX | kubernetes-v1.17.16-prod-20210211 |
-  | aadf25a0-46c5-4a40-ac37-XXXXXXXXXXXX | kubernetes-v1.20.4-prod-20210412  |
+  | d4715786-441d-4c59-bb0f-XXXXXXXXXXXX | kubernetes-v1.29.6-dev-20240211   |
+  | 5c999fc7-715d-4213-9b4e-XXXXXXXXXXXX | kubernetes-v1.29.6-prod-20240211  |
+  | 76f3a1ed-d970-40d1-962e-XXXXXXXXXXXX | kubernetes-v1.28.14-dev-20240211  |
+  | bef3162b-2a15-4df2-b637-XXXXXXXXXXXX | kubernetes-v1.28.14-prod-20240211 |
+  | 7946001d-222b-43fd-8ffa-XXXXXXXXXXXX | kubernetes-v1.27.16-dev-20240211  |
+  | 35ec1bbf-c2e1-4cd9-8677-XXXXXXXXXXXX | kubernetes-v1.27.16-prod-20240211 |
+  | aadf25a0-46c5-4a40-ac37-XXXXXXXXXXXX | kubernetes-v1.30.4-prod-20240412  |
   +--------------------------------------+-----------------------------------+
 
 
 We want to use the latest development template (which in the example above is
-``kubernetes-v1.19.6-dev-20200615``).
+``kubernetes-v1.29.6-dev-20200615``).
 
 Alternatively, a list of cluster templates can be seen in the
 **Cluster Template** dropdown of the **Create New Cluster** dialogue in the
@@ -147,7 +147,7 @@ dashboard, under the **Container Infra** section.
 
 .. Note::
 
-  Templates that are from the v1.20.x range onwards use containerd at runtime to
+  Templates that are from the v1.30.x range onwards use containerd at runtime to
   create a cluster.
 
 .. _dashboard-cluster-creation:
@@ -248,7 +248,7 @@ following command:
 .. code-block:: bash
 
   $ openstack coe cluster create k8s-cluster \
-  --cluster-template kubernetes-v1.19.6-dev-20210211 \
+  --cluster-template kubernetes-v1.29.6-dev-20240211 \
   --keypair my-ssh-key \
   --node-count 3 \
   --master-count 1
@@ -260,7 +260,7 @@ created using the dashboard method.
 
 .. Note::
 
-  Templates in the v1.20.x series onward need to specify the additional label:
+  Templates in the v1.30.x series onward need to specify the additional label:
   ``master_lb_floating_ip_enabled=True`` if you want to create a public cluster.
 
 Checking the status of the cluster

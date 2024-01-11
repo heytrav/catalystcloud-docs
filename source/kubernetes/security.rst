@@ -57,7 +57,7 @@ With command line, when creating a new Kubernetes cluster, please use label
 
 .. code-block:: bash
 
-  openstack coe cluster create k8s-1 --merge-labels --labels admission_control_list=PodSecurityPolicy --cluster-template kubernetes-v1.18.2-prod-20200630
+  openstack coe cluster create k8s-1 --merge-labels --labels admission_control_list=PodSecurityPolicy --cluster-template kubernetes-v1.28.2-prod-20230630
 
 Dashboard
 ~~~~~~~~~

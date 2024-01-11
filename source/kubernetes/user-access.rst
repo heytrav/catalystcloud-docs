@@ -11,7 +11,7 @@ Introduction
 Service User
 ============
 
-.. Not sure if "arbiter" is a good word here but it sounds cool and I couldn't think of a better one.
+.. NOTE (travis): Not sure if "arbiter" is a good word here.
 When creating resources such as Kubernetes clusters, OpenStack creates an
 object called a trust. The trust acts as a type of arbiter which the cluster
 uses when it needs to authenticate with the OpenStack API for performing tasks
