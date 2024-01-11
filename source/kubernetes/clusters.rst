@@ -429,6 +429,8 @@ To create a new **development** cluster run the following command:
 Customizing clusters using labels
 =================================
 
+.. NOTE(travis): Will need a list of labels still available with CAPI.
+
 It is possible to override the behaviour of a template by adding or modifying
 the labels supplied by the template.
 
