@@ -52,12 +52,15 @@ can do it by either command line or dashboard with label ``admission_control_lis
 Command Line
 ~~~~~~~~~~~~
 
-With command line, when creating a new Kubernetes cluster, please use label
-``admission_control_list`` and make sure --merge-labels used as well.
+When creating a new Kubernetes cluster on the command line you can use the label
+``admission_control_list`` to supplement or override the default labels.  Don't forget to use ``--merge-labels`` when 
+adding or overriding specific labels.
 
 .. code-block:: bash
 
-  openstack coe cluster create k8s-1 --merge-labels --labels admission_control_list=PodSecurity,ValidatingAdmissionPolicy,ValidatingAdmissionWebhook --cluster-template kubernetes-v1.28.2-prod-20230630
+  openstack coe cluster create k8s-1 \
+  --merge-labels --labels admission_control_list=PodSecurity,ValidatingAdmissionPolicy,ValidatingAdmissionWebhook \
+  --cluster-template kubernetes-v1.28.2-prod-20230630
 
 Dashboard
 ~~~~~~~~~
