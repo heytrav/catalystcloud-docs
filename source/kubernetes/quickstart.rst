@@ -260,8 +260,18 @@ created using the dashboard method.
 
 .. Note::
 
-  Templates in the v1.30.x series onward need to specify the additional label:
-  ``master_lb_floating_ip_enabled=True`` if you want to create a public cluster.
+  You can create a publicly accessible cluster by specifying the label ``master_lb_floating_ip_enabled=True``.
+
+.. code-block:: bash
+
+  $ openstack coe cluster create k8s-cluster \
+  --cluster-template kubernetes-v1.29.6-dev-20240211 \
+  --keypair my-ssh-key \
+  --node-count 3 \
+  --master-count 1\
+  --merge-labels --labels master_lb_floating_ip_enabled=True \
+
+  Request to create cluster c191470e-7540-43fe-af32-xxxxxxxxxxxx accepted
 
 Checking the status of the cluster
 ==================================

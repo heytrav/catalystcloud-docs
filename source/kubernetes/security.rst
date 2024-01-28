@@ -14,8 +14,8 @@ Please refer `Kubernetes official document`_ for the full list of admission cont
 .. _`Kubernetes official document`: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/
 
 
-Catalyst Cloud Kubernetes Service does support setting admission controllers
-when create a new cluster by specifying labels. The following 
+Catalyst Cloud Kubernetes Service supports setting admission controllers
+when creating a new cluster by specifying labels. The following 
 admission controllers are enabled by default:
 
 * CertificateApproval
@@ -57,7 +57,7 @@ With command line, when creating a new Kubernetes cluster, please use label
 
 .. code-block:: bash
 
-  openstack coe cluster create k8s-1 --merge-labels --labels admission_control_list=PodSecurityPolicy --cluster-template kubernetes-v1.28.2-prod-20230630
+  openstack coe cluster create k8s-1 --merge-labels --labels admission_control_list=PodSecurity,ValidatingAdmissionPolicy,ValidatingAdmissionWebhook --cluster-template kubernetes-v1.28.2-prod-20230630
 
 Dashboard
 ~~~~~~~~~
